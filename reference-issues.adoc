@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference-issues.html 
+keywords: issues, bugs, known issues 
+summary: Problemas conhecidos identificam problemas que podem impedi-lo de usar esta versão do produto com sucesso. 
+---
+= Problemas conhecidos
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Problemas conhecidos identificam problemas que podem impedi-lo de usar esta versão do produto com sucesso.
+
+Você pode encontrar problemas conhecidos para o software ONTAP no https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["Notas de versão do ONTAP"^].
+
+
+
+== A parada do nó pode falhar em pares de HA com várias SVMs
+
+Se você pretende parar ou reinicializar um nó Cloud Volumes ONTAP em um par de HA que tenha várias VMs de storage (SVMs), recomendamos que você pré-migre todas as interfaces lógicas (LIFs) para o nó do parceiro antes de desligar o nó.
+
+O exemplo a seguir migra todas as LIFs de dados do nó atual (local):
+
+`node1::> network interface migrate-all -node local`
+
+Essa ação agiliza a transição de rede para o nó do parceiro e evita problemas conhecidos ocasionais com a interrupção do nó.
+
+Se o nó não puder ser parado porque leva muito tempo para migrar os LIFs, uma tentativa de reinicialização ou parada do comando fará com que ele pare.

@@ -1,0 +1,206 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-aws.html 
+keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks 
+summary: Várias configurações do Cloud Volumes ONTAP são suportadas na AWS. 
+---
+= Configurações compatíveis na AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Várias configurações do Cloud Volumes ONTAP são suportadas na AWS.
+
+
+
+== Configurações suportadas por licença
+
+O Cloud Volumes ONTAP está disponível na AWS como um sistema de nó único e como um par de nós de alta disponibilidade (HA) para tolerância de falhas e operações ininterruptas.
+
+A atualização de um único sistema de nós para um par de HA não é compatível. Se você quiser alternar entre um único sistema de nós e um par de HA, precisará implantar um novo sistema e replicar dados do sistema existente para o novo sistema.
+
+[cols="h,d,d,d,d,d,d"]
+|===
+|  | Freemium | PAYGO Explore | Padrão PAYGO | PAYGO Premium | Licença baseada em nó | Licença baseada em capacidade 
+
+
+| Capacidade máxima do sistema (discos e armazenamento de objetos) | 500 GiB | 2 TIB | 10 TIB | 368 TIB 1 | 368 TIB por licença 1 | 2 PIB 1 
+
+
+| EC2 tipos de instância suportados: 2  a| 
+* c4.4xlarge
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge 3
+* c5d.9xlarge 3
+* c5d.18xlarge 3
+* c5n.9xlarge 4
+* c5n.18xlarge 4
+* m4.xlarge
+* m4.2xlarge
+* m4.4xlarge
+* m5.xlarge
+* m5.2xlarge
+* m5.4xlarge
+* m5.16xlarge
+* m5d.8xlarge 3
+* m5d.12xlarge 3
+* r4.xlarge
+* r4.2xlarge
+* r5.xlarge
+* r5.2xlarge
+* r5.8xlarge
+* r5,12xlarge 5
+* r5d.2xlarge 3
+
+ a| 
+* m4.xlarge
+* m5.xlarge
+
+ a| 
+* m4.2xlarge
+* m5.2xlarge
+* r4.xlarge
+* r5.xlarge
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge 3
+* c5d.9xlarge 3
+* c5d.18xlarge 3
+* c5n.9xlarge 4
+* c5n.18xlarge 4
+* m4.4xlarge
+* m5.4xlarge
+* m5.16xlarge
+* m5d.8xlarge 3
+* m5d.12xlarge 3
+* r4.2xlarge
+* r5.2xlarge
+* r5.8xlarge
+* r5,12xlarge 5
+* r5d.2xlarge 3
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge 3
+* c5d.9xlarge 3
+* c5d.18xlarge 3
+* c5n.9xlarge 4
+* c5n.18xlarge 4
+* m4.xlarge
+* m4.2xlarge
+* m4.4xlarge
+* m5.xlarge
+* m5.2xlarge
+* m5.4xlarge
+* m5.16xlarge
+* m5d.8xlarge 3
+* m5d.12xlarge 3
+* r4.xlarge
+* r4.2xlarge
+* r5.xlarge
+* r5.2xlarge
+* r5.8xlarge
+* r5,12xlarge 5
+* r5d.2xlarge 3
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge 3
+* c5d.9xlarge 3
+* c5d.18xlarge 3
+* c5n.9xlarge 4
+* c5n.18xlarge 4
+* m4.xlarge
+* m4.2xlarge
+* m4.4xlarge
+* m5.xlarge
+* m5.2xlarge
+* m5.4xlarge
+* m5.16xlarge
+* m5d.8xlarge 3
+* m5d.12xlarge 3
+* r4.xlarge
+* r4.2xlarge
+* r5.xlarge
+* r5.2xlarge
+* r5.8xlarge
+* r5,12xlarge 5
+* r5d.2xlarge 3
+
+
+
+
+| Tipos de disco suportados 6 6+| SSDs de uso geral (GP3 TB e GP2 TB), SSDs IOPS provisionados (IO1 TB) e HDDs otimizados para taxa de transferência (st1 TB) 7 
+|===
+Notas:
+
+. Para algumas configurações, os limites de disco impedem que você alcance o limite de capacidade usando discos sozinhos. Nesses casos, você pode alcançar o limite de capacidade em https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["disposição em camadas dos dados inativos no storage de objetos"^]. Para obter informações sobre limites de disco, link:reference-limits-aws.html["limites de armazenamento"]consulte .
+. Quando você escolhe um tipo de instância EC2, você pode especificar se é uma instância compartilhada ou uma instância dedicada.
+. Esses tipos de instância incluem armazenamento NVMe local, que o Cloud Volumes ONTAP usa como _Flash Cache_. O Flash Cache acelera o acesso aos dados por meio do armazenamento em cache inteligente em tempo real dos dados do usuário lidos recentemente e dos metadados do NetApp. Ele é eficaz para workloads com uso intenso de leitura aleatória, incluindo bancos de dados, e-mail e serviços de arquivos. A compactação deve ser desativada em todos os volumes para aproveitar as melhorias de desempenho do Flash Cache. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["Saiba mais"^].
+. c5n.9xlarge e c5n.18xlarge são suportados a partir de 9,7 P5.
+. O tipo de instância r5,12xlarge tem uma limitação conhecida com capacidade de suporte. Se um nó for reiniciado inesperadamente devido a um pânico, o sistema poderá não coletar arquivos principais usados para solucionar problemas e causar o problema. O cliente aceita os riscos e os termos de suporte limitados e assume toda a responsabilidade de suporte se esta condição ocorrer.
+. O desempenho de gravação aprimorado é habilitado ao usar SSDs com padrão Cloud Volumes ONTAP, Premium e BYOL.
+. A disposição em camadas dos dados no storage de objetos não é recomendada quando se usa HDDs otimizados para taxa de transferência (st1).
+. Para obter suporte à região da AWS, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
+
+
+
+
+== Tamanhos de disco suportados
+
+Na AWS, um agregado pode conter até 6 discos com o mesmo tipo e tamanho.
+
+[cols="3*"]
+|===
+| SSD de uso geral (GP3 e GP2) | SSD de IOPS provisionado (IO1) | HDD otimizado para taxa de transferência (st1) 
+
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+ a| 
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+
+|===
