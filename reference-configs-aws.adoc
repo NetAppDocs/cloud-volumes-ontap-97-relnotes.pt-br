@@ -158,7 +158,7 @@ Notas:
 . O tipo de instância r5,12xlarge tem uma limitação conhecida com capacidade de suporte. Se um nó for reiniciado inesperadamente devido a um pânico, o sistema poderá não coletar arquivos principais usados para solucionar problemas e causar o problema. O cliente aceita os riscos e os termos de suporte limitados e assume toda a responsabilidade de suporte se esta condição ocorrer.
 . O desempenho de gravação aprimorado é habilitado ao usar SSDs com padrão Cloud Volumes ONTAP, Premium e BYOL.
 . A disposição em camadas dos dados no storage de objetos não é recomendada quando se usa HDDs otimizados para taxa de transferência (st1).
-. Para obter suporte à região da AWS, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+. Para obter suporte à região da AWS, https://bluexp.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
 . O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
 
 

@@ -62,7 +62,7 @@ link:reference-limits-gcp.html["Saiba mais sobre os limites de disco no Google C
 Se tiver um sistema existente a funcionar neste tipo de máquina, pode continuar a utilizá-lo, mas recomendamos que mude para o tipo de máquina n2-standard-4.
 
 . O desempenho de gravação aprimorado é habilitado ao usar SSDs.
-. Para obter suporte à região do Google Cloud Platform, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^]consulte .
+. Para obter suporte à região do Google Cloud Platform, https://bluexp.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^]consulte .
 . O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.
 
 

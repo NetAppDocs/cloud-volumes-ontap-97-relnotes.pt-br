@@ -93,7 +93,6 @@
   <block id="0c4c4e63836f218793463e3bcdaddf27" category="list-text">O desempenho de gravação aprimorado é habilitado ao usar SSDs com padrão Cloud Volumes ONTAP, Premium e BYOL.</block>
   <block id="907c78338365697be8fd8d4a130503c8" category="list-text">A disposição em camadas dos dados no storage de objetos não é recomendada quando se usa HDDs otimizados para taxa de transferência (st1).</block>
   <block id="a3f8304ab1695053d71855c60f8abf63" category="inline-link">Regiões globais do Cloud volumes</block>
-  <block id="4375839c669e051e5f2a8de11ba0c5d0" category="list-text">Para obter suporte à região da AWS,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block> consulte .</block>
   <block id="e7089e61c962cfdae0de5b1d0748b6f2" category="list-text">O Cloud Volumes ONTAP pode ser executado em uma instância de VM reservada ou sob demanda do seu provedor de nuvem. As soluções que usam outros tipos de instância de VM não são suportadas.</block>
   <block id="36e4aa065725aff22926f2fed53bc3c7" category="section-title">Tamanhos de disco suportados</block>
   <block id="f1ef8a69abb63b240d611c09ea5ddde6" category="paragraph">Na AWS, um agregado pode conter até 6 discos com o mesmo tipo e tamanho.</block>
@@ -132,7 +131,6 @@
   <block id="0a1f6a0fa33e6a786e0c1f71a0ea33a9" category="list-text">Esse tipo de VM usa um<block ref="d656d82278337f3ecf8db6b2a30a45f2" category="inline-link-rx"></block> para VNVRAM, que fornece melhor desempenho de gravação.</block>
   <block id="64440bb71539a777dc59cfbda8a3e5ee" category="list-text">Esse tipo de VM inclui storage NVMe local, que o Cloud Volumes ONTAP usa como _Flash Cache_. O Flash Cache acelera o acesso aos dados por meio do armazenamento em cache inteligente em tempo real dos dados do usuário lidos recentemente e dos metadados do NetApp. Ele é eficaz para workloads com uso intenso de leitura aleatória, incluindo bancos de dados, e-mail e serviços de arquivos. A compactação deve ser desativada em todos os volumes para aproveitar as melhorias de desempenho do Flash Cache.<block ref="b6abeaa384c5670d0721bcc6323011fc" category="inline-link-rx"></block>.</block>
   <block id="a63be6f12cd03be8e118239f1f944bda" category="list-text">O desempenho de gravação aprimorado é habilitado ao usar SSDs, mas não ao usar o tipo de máquina virtual DS3_v2.</block>
-  <block id="7c7627c6477255acb2239bd1be90f346" category="list-text">Para obter suporte à região do Azure,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block> consulte .</block>
   <block id="b049fcbe8198301adc6bf87634a02845" category="section-title">Pares HA</block>
   <block id="2eacfdd792ca3ab121472c95654b43ec" category="paragraph">Você pode escolher entre as configurações a seguir ao implantar o Cloud Volumes ONTAP como um par de HA no Azure.</block>
   <block id="3e7433721426ddc5bb6007a1f480b7e0" category="cell">Tipos de disco suportados</block>
@@ -166,7 +164,6 @@
   <block id="46e869bc0f7a5fcdc09df010e1f48b25" category="list-text">O tipo de máquina personalizado-4-16384 não é mais suportado com novos sistemas Cloud Volumes ONTAP.</block>
   <block id="0e3cb01898d99d0091e2a6f5a7572390" category="paragraph">Se tiver um sistema existente a funcionar neste tipo de máquina, pode continuar a utilizá-lo, mas recomendamos que mude para o tipo de máquina n2-standard-4.</block>
   <block id="5063d3259058d90bbca06465957626d7" category="list-text">O desempenho de gravação aprimorado é habilitado ao usar SSDs.</block>
-  <block id="7093754c2bc2f151c7deef337385971a" category="list-text">Para obter suporte à região do Google Cloud Platform,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block>consulte .</block>
   <block id="d29bff99e1f1d5529824e9017672d630" category="paragraph">No Google Cloud, um agregado pode conter até 6 discos com o mesmo tipo e tamanho. Os seguintes tamanhos de disco são suportados:</block>
   <block id="dcfebc6fbca2c5316f55c914e6593d2d" category="list-text">100 GB</block>
   <block id="70f79b00cb7649d94d473895d6c540d2" category="list-text">1 TB</block>
@@ -215,7 +212,6 @@
   <block id="2d62580dcf116f839bad7027ac992878" category="list-text">NFSv4 não é suportado. NFSv3 é suportado.</block>
   <block id="b1969fa9ebe4dd2003618adb77082978" category="list-text">Pares HA não são suportados em algumas regiões.</block>
   <block id="1538d38eb23a96781db500ec7bd30195" category="inline-link">Consulte a lista de regiões do Azure suportadas</block>
-  <block id="1f129df010c594cb0d37bd30745a3820" category="paragraph"><block ref="1f129df010c594cb0d37bd30745a3820" category="inline-link-rx"></block></block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">As limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportadas por esta versão do produto ou que não interoperam corretamente com ele. Revise essas limitações com cuidado.</block>
   <block id="d634bf53c207457b9f979a3511629617" category="doc">Limitações conhecidas no Google Cloud</block>
   <block id="02c6db07568f707d210dadcbcddd5ea8" category="paragraph">Não há limitações conhecidas específicas do Cloud Volumes ONTAP no Google Cloud Platform. Consulte <block ref="3c5bba9e6532aaf7c9c167664226f819" category="inline-link-macro-rx"></block>.</block>
@@ -462,7 +458,6 @@
   <block id="ce8c95cf9de92e0d85852b999d00a17a" category="list-text">Alemanha Norte (público)</block>
   <block id="cfdd4f6f66dabd2b425ab10b5c56c3da" category="list-text">Alemanha Central Ocidental (público)</block>
   <block id="4a977616fcd7ade62dbf55a1f8db1bd0" category="inline-link">Veja a lista completa das regiões do Azure suportadas</block>
-  <block id="07a1c66013de0c57f2bd7d69d3354c41" category="paragraph"><block ref="0f846b36f06a975303e325a2ffb2c92b" category="inline-link-rx"></block>.</block>
   <block id="12f1dfb594b821e25e55ab014437acc4" category="section-title">9,7 P4 (2 de junho de 2020)</block>
   <block id="cae74b75cb879fa6011c4bc1e9acafed" category="inline-link">Veja a lista de bugs corrigidos no patch P4</block>
   <block id="cbbe5951f603eb168d6ea68a73b678bc" category="paragraph">A versão de patch 9,7 P4 para Cloud Volumes ONTAP agora está disponível por meio do Cloud Manager 3,8 e posterior. O Cloud Manager solicitará que você atualize seus sistemas existentes para esta versão de patch.<block ref="37b180138fbfa25f28dd1e0aa35747d2" category="inline-link-rx"></block> (É necessário iniciar sessão no site de suporte da NetApp).</block>
@@ -561,4 +556,9 @@
   <block id="c3647f40e3574e0e6f49e20c19135bfa" category="section-title">Limitações com o uso de extensões Azure VM</block>
   <block id="9d167ed7d52d81da8d83590ec3b5a4af" category="paragraph">O Cloud Volumes ONTAP não oferece suporte a extensões de máquina virtual (VM) do Azure e aplicativos de VM em uma implantação. O uso do Cloud Volumes ONTAP no Azure com extensões de VM causa atrasos nas operações e a NetApp recomenda evitá-las.</block>
   <block id="397c7d6cf1f12b7b8d421a9c73013b76" category="sidebar">Notas de versão do Cloud Volumes ONTAP 9,7</block>
+  <block id="0890aa708cef7529c2bd35cb7d2895df" category="list-text">Para obter suporte à região da AWS,<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block> consulte .</block>
+  <block id="f0de068c81c765820aca0fa8fe017396" category="list-text">Para obter suporte à região do Azure,<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block> consulte .</block>
+  <block id="ef9be83cb59b0572a3581a6724316e48" category="list-text">Para obter suporte à região do Google Cloud Platform,<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block>consulte .</block>
+  <block id="26f113c6240bf0450440356676516cf1" category="paragraph"><block ref="26f113c6240bf0450440356676516cf1" category="inline-link-rx"></block></block>
+  <block id="045622dfb07c6145c4ccaf9f2078e56b" category="paragraph"><block ref="782e925b243dc89a59a0bc67d50ce99b" category="inline-link-rx"></block>.</block>
 </blocks>
